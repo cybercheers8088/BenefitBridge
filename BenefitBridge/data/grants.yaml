@@ -1,0 +1,51 @@
+grants:
+  - id: "silver_support_scheme"
+    name: "Silver Support Scheme"
+    description: "Cash payouts for needy seniors to help with living expenses."
+    agency: "AIC / MSF"
+    category: "Financial Assistance"
+    application_url: "https://www.silversupport.gov.sg"
+    last_updated: "2024-01-01"
+    rules:
+      - predicate: "age_ge"
+        value: 65
+        logic: "AND"
+      - predicate: "citizen_status"
+        value: "Singaporean"
+        logic: "AND"
+      - predicate: "income_le"
+        value: 2800
+        logic: "OR"
+      - predicate: "flat_type"
+        value: ["1-room", "2-room"]
+        logic: "OR"
+
+  - id: "pioneer_generation_dental"
+    name: "PG Dental Care"
+    description: "Subsidies for dental care for Pioneer Generation seniors."
+    agency: "MOH"
+    category: "Healthcare"
+    application_url: "https://www.moh.gov.sg"
+    last_updated: "2024-01-01"
+    rules:
+      - predicate: "age_ge"
+        value: 65
+        logic: "AND"
+      - predicate: "citizen_status"
+        value: "Singaporean"
+        logic: "AND"
+
+  - id: "home_caregiving_grant"
+    name: "Home Caregiving Grant (HCG)"
+    description: "Monthly cash payout to help caregivers with caregiving expenses."
+    agency: "AIC"
+    category: "Caregiving"
+    application_url: "https://www.aic.sg"
+    last_updated: "2024-01-01"
+    rules:
+      - predicate: "citizen_status"
+        value: "Singaporean"
+        logic: "AND"
+      - predicate: "income_le"
+        value: 3000
+        logic: "AND"
